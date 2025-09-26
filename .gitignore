@@ -1,0 +1,23 @@
+# all
+/*
+
+# whitelist
+!.git*
+!Readme.md
+!debian.sh
+!src
+!License
+!Copyright
+!share
+!assets
+!Readme-*
+#---------
+
+# old
+/recycle_bin
+test.xml
+aria2.session
+.config/aria2_test.conf
+server_test.sh
+/test
+/core
