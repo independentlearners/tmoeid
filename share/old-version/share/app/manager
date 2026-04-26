@@ -10,12 +10,12 @@ manager_main() {
         ;;
     h* | -h* | --h*)
         cat <<-'EOF'
-			-m      --更换为tuna镜像源(仅debian,ubuntu,kali,alpine和arch)
-			-n      --启动novnc
-			-v      --启动VNC
-			-s      --停止vnc
-			-x      --启动xsdl
-			-h      --获取帮助信息
+            -m      --Ubah ke sumber mirror tuna (hanya debian, ubuntu, kali, alpine dan arch)
+            -n      --mulai baru
+            -v      --Mulai VNC
+            -s      --hentikan vnc
+            -x      --mulai xsdl
+            -h      --Dapatkan informasi bantuan
 		EOF
         ;;
     -m* | m* | -tuna*)
@@ -41,7 +41,16 @@ manager_main() {
     esac
 }
 check_tmoe_command() {
-    TMOE_TIPS_00="2021+patch.241011~2\nCommand: tmoe"
+    if [ "$(command -v zsh)" ]; then
+        if grep -Eq '^[^#]*alias t=tmoe' ~/.zshrc 2>/dev//null; then
+            TMOE_TIPS_01="t"
+        else
+            TMOE_TIPS_01="tmoe"
+        fi
+    else
+        TMOE_TIPS_01="tmoe"
+    fi
+    TMOE_TIPS_00="Welcome to tmoe linux manager v1.4989.56,type ${TMOE_TIPS_01} to start it."
 }
 #########################
 tmoe_manager_env() {
@@ -54,7 +63,7 @@ tmoe_manager_env() {
     TMOE_CONTAINER_DIR="${TMOE_LINUX_DIR}/containers"
     TMOE_TOOL_DIR="${TMOE_GIT_DIR}/share/old-version/tools"
     TMOE_SHARE_DIR="${TMOE_GIT_DIR}/share/old-version/share"
-    TMOE_GIT_URL="github.com/2moe/tmoe"
+    TMOE_GIT_URL="gitee.com/mo2/linux"
     AK2_GIT_URL="https://gitee.com/ak2"
     TMOE_LINUX_ISSUE_URL="https://github.com/2moe/tmoe/issues?q=is%3Aissue+is%3Aclosed"
     if [[ -e ${TMOE_GIT_DIR}/.git ]]; then
@@ -111,7 +120,7 @@ check_current_user_name_and_group() {
 press_enter_to_return() {
     printf "Press ${GREEN}enter${RESET} to ${BLUE}return.${RESET}\n"
     case ${TMOE_MENU_LANG} in
-    zh_*UTF-8) printf "按${GREEN}回车键${RESET}${BLUE}返回${RESET}\n" ;;
+    zh_*UTF-8) printf "Tekan tombol${GREEN}Enter${RESET}${BLUE}Untuk kembali${RESET}\n" ;;
     esac
     read
 }
@@ -444,9 +453,9 @@ check_gnu_linux_distro() {
             fi
         else
             if [ ! $(command -v curl) ]; then
-                wget -O /tmp/.tmoe-linux-tool.bash "https://raw.githubusercontent.com/2moe/tmoe/master/share/old-version/tools/app/tool"
+                wget -O /tmp/.tmoe-linux-tool.bash "https://gitee.com/mo2/linux/raw/master/share/old-version/tools/app/tool"
             else
-                curl -Lv -o /tmp/.tmoe-linux-tool.bash "https://raw.githubusercontent.com/2moe/tmoe/master/share/old-version/tools/app/tool"
+                curl -Lv -o /tmp/.tmoe-linux-tool.bash "https://gitee.com/mo2/linux/raw/master/share/old-version/tools/app/tool"
             fi
             source /tmp/.tmoe-linux-tool.bash
         fi
@@ -1031,7 +1040,7 @@ choose_tmoe_locale_env() {
             "319" "yo_NG: Èdè Yorùbá_Orilẹ̀-èdè Nàìjíríà" \
             "320" "yue_HK: 粵語_香港特別行政區" \
             "321" "yuw_PG: Uruwa_Papua New Guinea" \
-            "322" "en_US: 中文_中华人民共和国" \
+            "322" "zh_CN: 中文_中华人民共和国" \
             "323" "zh_HK: 繁體中文_香港" \
             "324" "zh_SG: 简体中文_新加坡" \
             "325" "zh_TW: 正體中文_臺灣" \
@@ -1526,7 +1535,7 @@ termux_color_scheme_menu() {
     esac
     case ${COLOR_FILE} in
     "") ;;
-    *) aria2c --console-log-level=warn --no-conf -d "${HOME}/.termux" --allow-overwrite=true -o "colors.properties" "https://raw.githubusercontent.com/2cd/zsh/master/share/colors/${COLOR_FILE}" ;;
+    *) aria2c --console-log-level=warn --no-conf -d "${HOME}/.termux" --allow-overwrite=true -o "colors.properties" "https://gitee.com/mo2/zsh/raw/master/share/colors/${COLOR_FILE}" ;;
     esac
 }
 choose_termux_color_scheme() {
@@ -1545,7 +1554,7 @@ choose_termux_color_scheme() {
     if [[ ! -s "termux.properties" ]] || grep -q '# extra-keys-style = default' termux.properties; then
         if ("${TUI_BIN:-whiptail}" --title "termux.properties" --yesno "Your extra-keys-style is default,do you want to configure it? It will modify the keyboard layout.\n是否需要创建termux.properties？这将会修改小键盘布局。" 10 50); then
             cp -vf termux.properties termux.properties.bak
-            aria2c --console-log-level=warn --no-conf --allow-overwrite=true -o "termux.properties.02" 'https://raw.githubusercontent.com/2cd/zsh/master/share/termux.properties'
+            aria2c --console-log-level=warn --no-conf --allow-overwrite=true -o "termux.properties.02" 'https://gitee.com/mo2/zsh/raw/master/share/termux.properties'
             sed -i -E 's@# (extra-keys-style)@#\1@g;s@^[^#]@#&@g;1r termux.properties.02' termux.properties
             if [[ ! -s termux.properties ]]; then
                 mv -fv termux.properties.02 termux.properties
@@ -1600,7 +1609,7 @@ tmoe_manager_main_menu() {
         TMOE_MANAGER_MAIN_OPTION=$(
             "${TUI_BIN:-whiptail}" --title "Tmoe manager running on ${OSRELEASE}" \
                 --backtitle "Type tmoe m to start the manager" \
-                --menu "${TMOE_TIPS_00}\n请使用方向键+回车键进行操作" 0 50 0 \
+                --menu "${TMOE_TIPS_00}\n请使用触摸屏或方向键+回车键进行操作" 0 50 0 \
                 "1" "🍀 proot容器(๑•̀ㅂ•́)و✧" \
                 "2" "🌸 chroot/unshare/systemd容器" \
                 "3" "💔 remove 移除" \
@@ -1782,7 +1791,7 @@ start_zsh_tool_as_current_user() {
 }
 start_tmoe_zsh_manager() {
     TMOE_ZSH_SCRIPT="${HOME}/.config/tmoe-zsh/git/zsh.sh"
-    ZSH_TOOL_URL="https://raw.githubusercontent.com/2cd/zsh/master/zsh.sh"
+    ZSH_TOOL_URL="https://gitee.com/mo2/zsh/raw/master/zsh.sh"
     case ${HOME} in
     /root) normally_start_zsh ;;
     *)

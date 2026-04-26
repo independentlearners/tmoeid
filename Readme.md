@@ -1,3 +1,3 @@
-The old edition has been archived, the next one will be the new edition.
+> Dalam pengembangan!
 
-See you next time.
+This is a forked version taken from gitee.com after it was last updated two years ago since April 27 2026. If you come from the developer country

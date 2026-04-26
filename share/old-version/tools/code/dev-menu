@@ -252,11 +252,11 @@ remove_ide_02() {
 check_ide_version() {
     cat <<-ENDofTable
 		╔═══╦══════════╦═══════════════════╦════════════════════
-		║   ║          ║                   ║
+		║   ║          ║                   ║                    
 		║   ║ software ║    ✨最新版本     ║   本地版本 🎪
-		║   ║          ║  Latest version   ║  Local version
+		║   ║          ║  Latest version   ║  Local version     
 		║---║----------║-------------------║--------------------
-		║ 1 ║${GREP_NAME}
+		║ 1 ║${GREP_NAME}                  
 		║   ║          ║$(printf '%s\n' "${THE_LATEST_APP_VERSION_CODE}" | sed 's@-x86_64@@')
 		║   ║          ║                    $(printf '%s\n' "${LOCAL_OPT_APP_VERSION}" | sed 's@-x86_64@@')
 
@@ -265,7 +265,7 @@ check_ide_version() {
 #########
 uncompress_arch_pkg_tar_zst() {
     cd /
-    tar --use-compress-program zstd -Ppxvf ${DOWNLOAD_PATH}/${ARCH_WALLPAPER_VERSION} --exclude=.*
+    tar -I zstd -Ppxvf ${DOWNLOAD_PATH}/${ARCH_WALLPAPER_VERSION} --exclude=.*
 }
 ###########
 if_you_want_to_install_manually() {

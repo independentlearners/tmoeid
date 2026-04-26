@@ -123,7 +123,7 @@ check_tmoe_locale() {
     else
         case ${LANG} in
         *UTF-8) TMOE_LANG=${LANG} ;;
-        *) TMOE_LANG="en_US.UTF-8" ;;
+        *) TMOE_LANG="zh_CN.UTF-8" ;;
         esac
     fi
     export LANG="${TMOE_LANG}"

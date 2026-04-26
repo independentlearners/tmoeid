@@ -302,7 +302,7 @@ run_awk_program() {
 main() {
     run_old_file || {
         _tmp_awk_file=$(get_temp_file)
-        _tmp_awk_uri=$(get_awk_uri gh)
+        _tmp_awk_uri=$(get_awk_uri ee)
         get_awk_file
         check_file_size
         run_awk_program

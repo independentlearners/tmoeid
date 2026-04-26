@@ -77,7 +77,7 @@ riscv64)
     TMOE_QEMU_ARCH="riscv64"
     ;;
 esac
-#检测两次
+# Diuji dua kali
 case "${CONTAINER_ARCH}" in
 "${TRUE_ARCH_TYPE}") TMOE_QEMU=false ;;
 esac

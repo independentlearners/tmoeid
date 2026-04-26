@@ -165,11 +165,11 @@ install_qemu_user_static() {
     check_qemu_user_version
     cat <<-ENDofTable
 		╔═══╦══════════╦═══════════════════╦════════════════════
-		║   ║          ║                   ║
+		║   ║          ║                   ║                    
 		║   ║ software ║    ✨最新版本     ║   本地版本 🎪
-		║   ║          ║  Latest version   ║  Local version
+		║   ║          ║  Latest version   ║  Local version     
 		║---║----------║-------------------║--------------------
-		║ 1 ║qemu-user ║                    ${LOCAL_QEMU_USER_VERSION}
+		║ 1 ║qemu-user ║                    ${LOCAL_QEMU_USER_VERSION} 
 		║   ║ static   ║${THE_LATEST_DEB_VERSION_CODE}
 
 	ENDofTable
@@ -183,10 +183,6 @@ install_qemu_user_static() {
         apt update
         printf '%s\n' 'apt install -y qemu-user-static'
         apt install -y qemu-user-static
-        ;;
-    "arch")
-        printf '%s\n' 'pacman -Sy qemu-user-static qemu-user-static-binfmt'
-        pacman -Sy qemu-user-static qemu-user-static-binfmt
         ;;
     *) download_qemu_user ;;
     esac

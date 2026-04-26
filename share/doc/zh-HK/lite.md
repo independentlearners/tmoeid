@@ -1,27 +1,34 @@
-# 文檔
+# 文件
 
-本項目的文檔已經遷移至 doc 分支。  
-您可以前往 tmoe 的 doc 網站在線閲覽。
-
+這是一個重新開發的分支，原始專案文件已移至 doc 分支。
+您可以訪問tmoe的原始文件站點，透過以下方式在線閱讀和瀏覽：
 [doc.tmoe.me](https://doc.tmoe.me)
 
-您如果無法訪問此網站，那就手動克隆 **doc** 或 **gh-pages** 分支吧！
+<!-- # 文檔 -->
+<!---->
+<!-- 本項目的文檔已經遷移至 doc 分支。   -->
+<!-- 您可以前往 tmoe 的 doc 網站在線閲覽。 -->
+<!---->
+<!-- [doc.tmoe.me](https://doc.tmoe.me) -->
+<!---->
+<!-- 您如果無法訪問此網站，那就手動克隆 **doc** 或 **gh-pages** 分支吧！ -->
+<!---->
+<!-- ```sh -->
+<!-- git clone \ -->
+<!--     -b doc \ -->
+<!--     --depth=1 \ -->
+<!--     https://github.com/2moe/tmoe -->
+<!-- ``` -->
+<!---->
+<!-- 或者是 -->
+<!---->
+<!-- ```sh -->
+<!-- git clone \ -->
+<!--     -b gh-pages \ -->
+<!--     --depth=1 \ -->
+<!--     https://github.com/2moe/tmoe \ -->
+<!--     pages -->
+<!---->
+<!-- xdg-open pages/zh/index.html -->
+<!-- ``` -->
 
-```sh
-git clone \
-    -b doc \
-    --depth=1 \
-    https://github.com/2moe/tmoe
-```
-
-或者是
-
-```sh
-git clone \
-    -b gh-pages \
-    --depth=1 \
-    https://github.com/2moe/tmoe \
-    pages
-
-xdg-open pages/zh/index.html
-```

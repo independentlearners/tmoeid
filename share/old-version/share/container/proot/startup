@@ -788,7 +788,7 @@ cat >"${TMOE_STARTUP_SCRIPT}" <<-ENDOFPROOT
 	    if [[ -r "\${TMOE_LOCALE_FILE}" ]]; then
 	        set -- "\${@}" "LANG=\$(head -n 1 \${TMOE_LOCALE_FILE})"
 	    else
-	        set -- "\${@}" "LANG=en_US.UTF-8"
+	        set -- "\${@}" "LANG=zh_CN.UTF-8"
 	    fi
 	    [[ \${EXA_ENABLED} != true ]] || set -- "\${@}" "LD_LIBRARY_PATH=/usr/local/lib:/usr/lib32:/usr/lib:/lib:/usr/lib/i386-linux-gnu:/var/lib:/var/lib/dpkg:/lib/i386-linux-gnu"
 	    #SHELL

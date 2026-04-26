@@ -340,7 +340,7 @@ tmoe_locale_menu() {
             "308" "yo_NG: Èdè Yorùbá_Orilẹ̀-èdè Nàìjíríà" \
             "309" "yue_HK: 粵語_香港特別行政區" \
             "310" "yuw_PG: Uruwa_Papua New Guinea" \
-            "311" "en_US: 中文_中华人民共和国" \
+            "311" "zh_CN: 中文_中华人民共和国" \
             "312" "zh_HK: 繁體中文_香港" \
             "313" "zh_SG: 简体中文_新加坡" \
             "314" "zh_TW: 正體中文_臺灣" \

@@ -1,27 +1,35 @@
 # 文档
 
-本项目的文档已经迁移至 doc 分支。  
-您可以前往 tmoe 的 doc 网站在线阅览。
-
+这是一个重新开发的分支，原始项目文档已移至 doc 分支。
+您可以访问tmoe的原始文档站点，通过以下方式在线阅读和浏览：
 [doc.tmoe.me](https://doc.tmoe.me)
 
-您如果无法访问此网站，那就手动克隆 **doc** 或 **gh-pages** 分支吧！
-
-```sh
-git clone \
-    -b doc \
-    --depth=1 \
-    https://github.com/2moe/tmoe
-```
-
-或者是
-
-```sh
-git clone \
-    -b gh-pages \
-    --depth=1 \
-    https://github.com/2moe/tmoe \
-    pages
-
-xdg-open pages/zh/index.html
-```
+<!---->
+<!-- # 文档 -->
+<!---->
+<!-- 本项目的文档已经迁移至 doc 分支。   -->
+<!-- 您可以前往 tmoe 的 doc 网站在线阅览。 -->
+<!---->
+<!-- [doc.tmoe.me](https://doc.tmoe.me) -->
+<!---->
+<!-- 您如果无法访问此网站，那就手动克隆 **doc** 或 **gh-pages** 分支吧！ -->
+<!---->
+<!-- ```sh -->
+<!-- git clone \ -->
+<!--     -b doc \ -->
+<!--     --depth=1 \ -->
+<!--     https://github.com/2moe/tmoe -->
+<!-- ``` -->
+<!---->
+<!-- 或者是 -->
+<!---->
+<!-- ```sh -->
+<!-- git clone \ -->
+<!--     -b gh-pages \ -->
+<!--     --depth=1 \ -->
+<!--     https://github.com/2moe/tmoe \ -->
+<!--     pages -->
+<!---->
+<!-- xdg-open pages/zh/index.html -->
+<!-- ``` -->
+<!---->
